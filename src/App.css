@@ -1,38 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+:root {
+  --blueViolet: blueviolet;
+  --white: #fff;
+  --pink: rgb(240, 57, 185);
+}
+
 .App {
+  background-color: #eb5834;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  color: var(--white);
   text-align: center;
+  font-family: 'Lato', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navLinks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.link {
+  text-decoration: none;
+  color: #eb5834;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.link:hover {
+  transform: scale(2);
+  transition: all 0.5s ease-out;
+}
+
+.mic {
+  margin-right: 1rem;
+}
+
+.searchbar {
+  text-align: center;
+  font-size: 1rem;
+  font-family: var(--font-family);
+  padding: 1% 10%;
+  border: none;
+  border-radius: 5px;
+}
+
+.grid-container a {
+  display: inline-flex;
+  border-radius: 5px;
+  height: 1.5rem;
+  width: 50%;
+  background-color: #eb5234;
+  text-align: center;
+  text-decoration: none;
+  padding-bottom: 30px;
+}
+
+.grid-container > a:nth-child(4n+3),
+.grid-container > a:nth-child(4n+2) {
+  background-color: #eb5834;
+}
+
+.coin {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  background-color: var(--bit-dark-color);
+  padding: 3% 3%;
 }

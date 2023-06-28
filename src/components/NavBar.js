@@ -1,9 +1,18 @@
-import React from 'react'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+// import { BsChevronLeft } from 'react-icons/bs';
+// import { MdOutlineKeyboardVoice } from 'react-icons/md';
 
-function NavBar() {
-  return (
-    <div>NavBar</div>
-  )
-}
+const NavBar = () => (
+  <>
+    <nav>
+      <div className="navLinks">
+        {/* <NavLink className="link" to="#"><BsChevronLeft /></NavLink>
+        <NavLink className="link" to="#"><MdOutlineKeyboardVoice /></NavLink> */}
+        <NavLink className="link" to="/">Crypto</NavLink>
+      </div>
+    </nav>
+  </>
+);
 
-export default NavBar
+export default NavBar;
