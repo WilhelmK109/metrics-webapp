@@ -25,8 +25,8 @@ export default function CryptoList() {
   }
 
   const filteredMetrics = cryptoMetrics.filter((metric) => {
-    const metricName = metric.CoinInfo.FullName.toLowerCase();
-    return query === '' || (metricName.includes(query.toLowerCase()));
+    const metricName = metric.name.toLowerCase();
+    return query === '' || metricName.includes(query.toLowerCase());
   });
 
   return (
@@ -42,15 +42,15 @@ export default function CryptoList() {
       </div>
       {filteredMetrics.map((metric) => (
         <div key={metric.id} className="container">
-          <li role="presentation" onClick={() => navigate(`CoinInfo/${metric.CoinInfo.FullName}`)}>
+          <li role="presentation" onClick={() => navigate(`crypto/${metric.id}`)}>
             <div>
               FullName -
-              {metric.CoinInfo.FullName}
+              {metric.name}
               {' '}
               <br />
               Price -
               {' '}
-              {metric.RAW.USD.PRICE}
+              {metric.current_price}
             </div>
           </li>
         </div>

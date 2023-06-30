@@ -1,14 +1,23 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 export const fetchCryptoMetrics = createAsyncThunk(
   'cryptoMetrics/fetchCryptoMetrics',
   async () => {
-    const response = await fetch('https://min-api.cryptocompare.com/data/top/mktcapfull?limit=20&tsym=USD&api_key=bf47d143a098761ab1094a71d87e761deba8b1998957ab709631b191d2bdd0bf');
-    if (!response.ok) {
+    try {
+      const response = await axios.get('https://api.coingecko.com/api/v3/coins/markets', {
+        params: {
+          vs_currency: 'usd',
+          order: 'market_cap_desc',
+          per_page: 20,
+          page: 1,
+        },
+      });
+
+      return response.data;
+    } catch (error) {
       throw new Error('Failed to fetch data');
     }
-    const data = await response.json();
-    return data.Data;
   },
 );
 
