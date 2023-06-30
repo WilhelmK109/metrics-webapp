@@ -1,7 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
+:root {
+  --phlox: rgb(223, 0, 255);
+  --white: #fff;
+  --pink: rgb(240, 57, 185);
+}
+
 .App {
   background-color: #eb5834;
+  height: 100vh;
 }
 
 * {
@@ -10,4 +17,88 @@
   color: var(--white);
   text-align: center;
   font-family: 'Lato', sans-serif;
+}
+
+.navLinks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.link {
+  text-decoration: none;
+  font-weight: 550;
+  border: 1px solid #fff;
+}
+
+.link:hover {
+  transform: scale(1.8);
+  transition: all 0.5s ease-out;
+}
+
+.search-bar {
+  text-align: center;
+  font-size: 1rem;
+  font-family: var(--font-family);
+  padding: 1% 10%;
+  border: none;
+  border-radius: 5px;
+}
+
+.search-input {
+  border: none;
+  border-radius: 5px;
+  height: 1.8rem;
+  width: 30%;
+  color: var(--pink);
+  margin-bottom: 1rem;
+}
+
+.container {
+  display: inline-flex;
+  border-radius: 2px;
+  height: 1.5rem;
+  width: 50%;
+  justify-content: center;
+  background-color: var(--pink);
+  min-height: 100px;
+}
+
+.container li {
+  list-style: none;
+  font-size: 1.2rem;
+  padding: 1rem 0.5rem;
+  align-items: center;
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+.container:nth-child(4n+3),
+.container:nth-child(4n+2) {
+  background-color: var(--phlox);
+}
+
+.crypto-details li {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 5rem;
+}
+
+img {
+  width: 150px;
+}
+
+.crypto-details li:nth-child(odd) {
+  background-color: var(--pink);
+}
+
+.crypto-details li:nth-child(even) {
+  background-color: var(--phlox);
+}
+
+.crypto-details {
+  line-height: 1.6;
+  margin-top: 1rem;
 }
